@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: CataList_production
-  username: CataList
-  password: <%= ENV["CATALIST_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
