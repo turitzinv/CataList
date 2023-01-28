@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path = "/" >
-          <h1>Test Home</h1>
+          <h1>Test Homepage</h1>
         </Route>
         <Route path="/testing">
           <h1>Test Route</h1>
