@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   #     constraints: ->(req) { !req.xhr? && req.format.html? }
 
   get '/users', to: 'users#index'
+  get '/lists', to: 'lists#index'
 
 end
