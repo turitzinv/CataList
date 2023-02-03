@@ -1,6 +1,9 @@
-import './App.css';
+import "./App.css";
 //import { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import MyLists from "./components/MyLists";
+import Home from "./components/Home";
 
 function App() {
   //const [count, setCount] = useState(0);
@@ -13,18 +16,18 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App">
-      <Switch>
-        <Route exact path = "/" >
-          <h1>Full-Lists</h1>
-          <h2>Your lists at its fullest</h2>
-        </Route>
-        <Route path="/testing">
-          <h1>Test Route</h1>
-        </Route>
-      </Switch>
-    </div>
-  </BrowserRouter>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/lists">
+            <MyLists />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
