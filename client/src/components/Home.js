@@ -5,6 +5,7 @@ const Home = () => {
     <div>
       <h1>Full-Lists</h1>
       <h2>Your lists at its fullest</h2>
+      <p>Store your lists for just about anything! Packing, shopping, goals, agendas, list them all!</p>
     </div>
   );
 };
