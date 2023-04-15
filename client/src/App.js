@@ -1,18 +1,20 @@
 import "./App.css";
-//import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import MyLists from "./components/MyLists";
 import Home from "./components/Home";
 
 function App() {
-  //const [count, setCount] = useState(0);
+  const [allLists, setLists] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("/hello")
-  //     .then((resp) => resp.json())
-  //     .then((data) => setCount(data.count));
-  // }, []);
+  useEffect(() => {
+    fetch("/lists")
+    .then((resp) => resp.json())
+    .then((lists)=> setLists(lists))
+  }, [])
+
+  console.log(allLists)
 
   return (
     <BrowserRouter>

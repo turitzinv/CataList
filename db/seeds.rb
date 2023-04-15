@@ -9,10 +9,22 @@ Category.create(title: "Groceries")
 Category.create(title: "Other") #consider other being allowed to create their own
 
 List.create(
-  header: "Packing List",
+  header: "Packing",
   category_id: 1,
   owner_id: 1
-) #no image
+)
+
+List.create(
+  header: "Grocery",
+  category_id: 1,
+  owner_id: 1
+)
+
+List.create(
+  header: "Grocery",
+  category_id: 1,
+  owner_id: 1
+)
 
 Item.create(name: "Toothbrush", list_id: 1, user_id: 1)
 
