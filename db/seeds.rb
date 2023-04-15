@@ -21,7 +21,7 @@ List.create(
 )
 
 List.create(
-  header: "Grocery",
+  header: "Other",
   category_id: 1,
   owner_id: 1
 )

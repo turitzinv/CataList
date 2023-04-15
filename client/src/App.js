@@ -13,8 +13,8 @@ function App() {
     .then((resp) => resp.json())
     .then((lists)=> setLists(lists))
   }, [])
+  //consider only pulling current user lists would be more efficient
 
-  console.log(allLists)
 
   return (
     <BrowserRouter>
@@ -25,7 +25,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/lists">
-            <MyLists />
+            <MyLists allLists={allLists} />
           </Route>
         </Switch>
       </div>

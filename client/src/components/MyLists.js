@@ -1,13 +1,20 @@
 import React from "react";
+import ListCard from "./ListCard";
 
-const MyLists = () => {
+const MyLists = ({allLists}) => {
+
+  console.log(allLists)
+
+  const userList = allLists.map((list) => 
+  <ListCard 
+  key={list.id}
+  header={list.header}
+    /> )
+
   return (
     <div>
-      <h1>All your Lists</h1>
-      <button>Add New List</button>
-      <h2>Grocery</h2>
-      <h2>Packing</h2>
-      <h2>Other</h2>
+      <h1>Your Lists</h1>
+      {userList}
     </div>
   );
 };
