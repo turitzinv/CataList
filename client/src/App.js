@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import MyLists from "./components/MyLists";
 import Home from "./components/Home";
+import Login from "./components/Login";
 
 function App() {
   const [allLists, setLists] = useState([]);

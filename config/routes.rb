@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index'
   get '/lists', to: 'lists#index'
+  post '/login', to: 'sessions#create'
 
 end

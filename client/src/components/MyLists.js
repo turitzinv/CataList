@@ -1,15 +1,10 @@
 import React from "react";
 import ListCard from "./ListCard";
 
-const MyLists = ({allLists}) => {
-
-  console.log(allLists)
-
-  const userList = allLists.map((list) => 
-  <ListCard 
-  key={list.id}
-  header={list.header}
-    /> )
+const MyLists = ({ allLists }) => {
+  const userList = allLists.map((list) => (
+    <ListCard key={list.id} header={list.header} />
+  ));
 
   return (
     <div>
