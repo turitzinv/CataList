@@ -8,6 +8,10 @@ import Login from "./components/Login";
 
 function App() {
   const [allLists, setLists] = useState([]);
+  const [username, setUsername] = useState("");
+
+  //handle login function #session gets created
+  //make logout button #delete
 
   useEffect(() => {
     fetch("/lists")
