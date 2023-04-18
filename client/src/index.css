@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#list-card-div {
+  color: rgb(15, 96, 44);
+  border: 5px solid green;
+  border-radius: 0.5rem;
+  max-width: 200px;
+  margin: 10px;
+}
