@@ -23,6 +23,9 @@ const NavBar = () => {
       <NavLink style={linkStyles} to="/lists">
         My Lists
       </NavLink>
+      <NavLink style={linkStyles} to="/login">
+        Login
+      </NavLink>
     </div>
   );
 };

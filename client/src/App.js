@@ -28,6 +28,9 @@ function App() {
           <Route path="/lists">
             <MyLists allLists={allLists} />
           </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
         </Switch>
       </div>
     </BrowserRouter>
