@@ -5,25 +5,25 @@ const NavBar = () => {
 
   // const linkStyles = {
   //   display: "inline-block",
-  //   width: "140px",
+  //   width: "110px",
   //   padding: "5px",
   //   margin: "5px",
   //   background: "rgb(30, 124, 105)",
   //   textDecoration: "none",
   //   color: "white",
   //   fontWeight: "bold",
-  //   fontSize: "20px"
+  //   fontSize: "20px",
   // }
 
   return (
     <div>
-      <NavLink class="navbar" to="/">
+      <NavLink id="home-navbar" to="/">
         Home
       </NavLink>
-      <NavLink class="navbar" to="/lists">
+      <NavLink id="mylists-navbar" to="/lists">
         My Lists
       </NavLink>
-      <NavLink class="navbar" to="/login">
+      <NavLink id="login-navbar" to="/login">
         Login
       </NavLink>
     </div>
