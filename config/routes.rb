@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index'
   get '/me', to: 'users#show'
+  post '/signup', to: 'users#create'
   get '/lists', to: 'lists#index'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
