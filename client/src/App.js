@@ -41,7 +41,7 @@ function App() {
     })
     .then((resp) => {
       if (resp.ok) {
-        resp.json().then(user => setUser(user));
+        resp.json().then(user => console.log(user));
       } else {
         resp.json().then(err => console.log(err))
       }
@@ -60,7 +60,7 @@ function App() {
             <MyLists allLists={allLists} />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login handleLogin={handleLogin} />
           </Route>
         </Switch>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Login = () => {
+const Login = ({handleLogin}) => {
   return (
     <div>
       <h2>Please log into your Full-List account</h2>
@@ -13,7 +13,7 @@ const Login = () => {
         type= "password"
         placeholder= "Password"
         />
-        <button type="submit"> Log in </button>
+        <button type="submit" onClick={handleLogin}> Log in </button>
       </form>
     </div>
   )
