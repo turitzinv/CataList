@@ -41,9 +41,9 @@ function App() {
     })
     .then((resp) => {
       if (resp.ok) {
-        resp.json().then(user => console.log(user));
+        resp.json().then(user => setUser(user));
       } else {
-        resp.json().then(err => console.log(err))
+        resp.json().then(err => setErrors(err))
       }
     });
   }
@@ -51,7 +51,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar />
+        <NavBar setUser={setUser} />
         <Switch>
           <Route exact path="/">
             <Home />
