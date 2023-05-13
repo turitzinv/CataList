@@ -9,6 +9,7 @@ import Login from "./components/Login";
 function App() {
   const [allLists, setLists] = useState([]);
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   //handle login function #session gets created
   //make logout button #delete
@@ -18,7 +19,15 @@ function App() {
     .then((resp) => resp.json())
     .then((lists)=> setLists(lists))
   }, [])
+
+  // useEffect(() => {
+  //   fetch("/me")
+  //   .then((resp) => resp.json())
+  //   .then((user) => console.log(user))
+  // }, [])
+
   //consider only pulling current user lists would be more efficient
+
 
 
   return (

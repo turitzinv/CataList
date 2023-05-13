@@ -13,6 +13,7 @@ const Login = () => {
         type= "password"
         placeholder= "Password"
         />
+        <button type="submit"> Log in </button>
       </form>
     </div>
   )
