@@ -60,7 +60,11 @@ function App() {
             <MyLists allLists={allLists} />
           </Route>
           <Route path="/login">
-            <Login handleLogin={handleLogin} />
+            <Login handleLogin={handleLogin} 
+            username={username}
+            setUsername={setUsername}
+            setPassword={setPassword}
+            password={password} />
           </Route>
         </Switch>
       </div>
