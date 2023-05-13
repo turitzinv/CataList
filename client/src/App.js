@@ -10,6 +10,8 @@ function App() {
   const [allLists, setLists] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([])
+  const [user, setUser] = useState(null)
 
   //handle login function #session gets created
   //make logout button #delete
@@ -28,7 +30,23 @@ function App() {
 
   //consider only pulling current user lists would be more efficient
 
-
+  function handleLogin(event) {
+    event.preventDefault();
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ username, password }),
+    })
+    .then((resp) => {
+      if (resp.ok) {
+        resp.json().then(user => setUser(user));
+      } else {
+        resp.json().then(err => console.log(err))
+      }
+    });
+  }
 
   return (
     <BrowserRouter>
