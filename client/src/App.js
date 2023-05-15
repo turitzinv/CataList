@@ -1,6 +1,6 @@
 import "./App.css";
-import { useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Switch, Route, useHistory } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import MyLists from "./components/MyLists";
 import Home from "./components/Home";
@@ -10,17 +10,16 @@ function App() {
   const [allLists, setLists] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([])
-  const [user, setUser] = useState(null)
+  const [errors, setErrors] = useState([]);
+  const [user, setUser] = useState(null);
 
-  //handle login function #session gets created
-  //make logout button #delete
+  let history = useHistory();
 
   useEffect(() => {
     fetch("/lists")
-    .then((resp) => resp.json())
-    .then((lists)=> setLists(lists))
-  }, [])
+      .then((resp) => resp.json())
+      .then((lists) => setLists(lists));
+  }, []);
 
   // useEffect(() => {
   //   fetch("/me")
@@ -35,17 +34,17 @@ function App() {
     fetch("/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    })
-    .then((resp) => {
+    }).then((resp) => {
       if (resp.ok) {
-        resp.json().then(user => setUser(user));
-        setUsername("")
-        setPassword("")
+        resp.json().then((user) => setUser(user));
+        history.push("/");
+        setUsername("");
+        setPassword("");
       } else {
-        resp.json().then(err => setErrors(err))
+        resp.json().then((err) => setErrors(err));
       }
     });
   }
@@ -62,11 +61,13 @@ function App() {
             <MyLists allLists={allLists} />
           </Route>
           <Route path="/login">
-            <Login handleLogin={handleLogin} 
-            username={username}
-            setUsername={setUsername}
-            setPassword={setPassword}
-            password={password} />
+            <Login
+              handleLogin={handleLogin}
+              username={username}
+              setUsername={setUsername}
+              setPassword={setPassword}
+              password={password}
+            />
           </Route>
         </Switch>
       </div>
