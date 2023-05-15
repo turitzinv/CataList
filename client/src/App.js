@@ -42,6 +42,8 @@ function App() {
     .then((resp) => {
       if (resp.ok) {
         resp.json().then(user => setUser(user));
+        setUsername("")
+        setPassword("")
       } else {
         resp.json().then(err => setErrors(err))
       }
