@@ -51,7 +51,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar setUser={setUser} />
+        <NavBar setUser={setUser} user={user} />
         <Switch>
           <Route exact path="/">
             <Home />
