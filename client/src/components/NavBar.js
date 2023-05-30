@@ -29,11 +29,14 @@ const NavBar = ({ setUser, user }) => {
       <NavLink id="home-navbar" to="/">
         Home
       </NavLink>
-      <NavLink id="mylists-navbar" to="/lists">
+
+      {user ? (
+        <>
+        <button onClick={handleLogOutClick}>Log out</button>
+        <NavLink id="mylists-navbar" to="/lists">
         My Lists
       </NavLink>
-      {user ? (
-        <button onClick={handleLogOutClick}>Log out</button>
+      </>
       ) : (
         <NavLink id="login-navbar" to="/login">
           Login
