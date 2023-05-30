@@ -71,6 +71,16 @@ code {
   left: 550px;
 }
 
+#logout-button-navbar {
+  background: rgb(30, 124, 105);
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  margin: 5px;
+  position: relative;
+  left: 550px;
+}
+
 #listcard-button {
   background-color: rgb(30, 124, 105);
   border: none;

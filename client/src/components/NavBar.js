@@ -32,7 +32,7 @@ const NavBar = ({ setUser, user }) => {
 
       {user ? (
         <>
-        <button onClick={handleLogOutClick}>Log out</button>
+        <button id="logout-button-navbar" onClick={handleLogOutClick}>Log out</button>
         <NavLink id="mylists-navbar" to="/lists">
         My Lists
       </NavLink>
