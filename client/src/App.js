@@ -15,21 +15,11 @@ function App() {
 
   let history = useHistory();
 
-  console.log(allLists)
-
-  // useEffect(() => {
-  //   fetch("/lists")
-  //     .then((resp) => resp.json())
-  //     .then((lists) => setLists(lists));
-  // }, []);
-
   useEffect(() => {
     fetch("/me")
     .then((resp) => resp.json())
-    .then((user) => console.log(user))
+    .then((user) => setLists(user.lists))
   }, [])
-
-  //consider only pulling current user lists would be more efficient
 
   function handleLogin(event) {
     event.preventDefault();
