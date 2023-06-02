@@ -15,17 +15,19 @@ function App() {
 
   let history = useHistory();
 
-  useEffect(() => {
-    fetch("/lists")
-      .then((resp) => resp.json())
-      .then((lists) => setLists(lists));
-  }, []);
+  console.log(allLists)
 
   // useEffect(() => {
-  //   fetch("/me")
-  //   .then((resp) => resp.json())
-  //   .then((user) => console.log(user))
-  // }, [])
+  //   fetch("/lists")
+  //     .then((resp) => resp.json())
+  //     .then((lists) => setLists(lists));
+  // }, []);
+
+  useEffect(() => {
+    fetch("/me")
+    .then((resp) => resp.json())
+    .then((user) => console.log(user))
+  }, [])
 
   //consider only pulling current user lists would be more efficient
 
