@@ -47,7 +47,7 @@ function App() {
         <NavBar setUser={setUser} user={user} />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home user={user} />
           </Route>
           <Route path="/lists">
             <MyLists allLists={allLists} />
