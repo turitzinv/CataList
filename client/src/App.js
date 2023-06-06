@@ -15,6 +15,11 @@ function App() {
 
   let history = useHistory();
 
+  console.log(allLists)
+  //Add lists that are involved from the user.
+  //Separate state for items that match users id?
+  //Or another nest within users to have user -> lists -> id.
+
   useEffect(() => {
     fetch("/me")
     .then((resp) => resp.json())
