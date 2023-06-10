@@ -15,7 +15,7 @@ function App() {
 
   let history = useHistory();
 
-  console.log(allLists)
+  // console.log(user.lists)
   //Add lists that are involved from the user.
   //Separate state for items that match users id?
   //Or another nest within users to have user -> lists -> id.
@@ -37,7 +37,7 @@ function App() {
     }).then((resp) => {
       if (resp.ok) {
         resp.json().then((user) => setUser(user));
-        history.push("/");
+        history.push("/lists");
         setUsername("");
         setPassword("");
       } else {
