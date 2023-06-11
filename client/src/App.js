@@ -37,7 +37,7 @@ function App() {
     }).then((resp) => {
       if (resp.ok) {
         resp.json().then((user) => setUser(user));
-        history.push("/lists");
+        history.push("/");
         setUsername("");
         setPassword("");
       } else {
