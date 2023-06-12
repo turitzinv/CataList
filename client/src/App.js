@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     fetch("/me")
     .then((resp) => resp.json())
-    .then((user) => setLists(user.lists))
+    .then((user) => setUser(user))
   }, [])
 
   function handleLogin(event) {
